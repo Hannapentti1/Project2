@@ -1,11 +1,19 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json({ status: "ok", message: "Snippet API running. Use /api/getall" });
+});
+
+// Mongo schema
 const snippetSchema = new mongoose.Schema({
   title: { type: String, required: true },
   language: { type: String, required: true },
@@ -17,8 +25,6 @@ const snippetSchema = new mongoose.Schema({
 const Snippet = mongoose.model("Snippet", snippetSchema);
 
 // Routes
-
-// GET /api/getall
 app.get("/api/getall", async (req, res) => {
   try {
     const { lang, limit } = req.query;
@@ -35,7 +41,6 @@ app.get("/api/getall", async (req, res) => {
   }
 });
 
-// return one snippet
 app.get("/api/:id", async (req, res) => {
   try {
     const snippet = await Snippet.findById(req.params.id);
@@ -46,7 +51,6 @@ app.get("/api/:id", async (req, res) => {
   }
 });
 
-// create new snippet
 app.post("/api/add", async (req, res) => {
   try {
     const snippet = new Snippet(req.body);
@@ -57,7 +61,6 @@ app.post("/api/add", async (req, res) => {
   }
 });
 
-// update snippet
 app.patch("/api/update/:id", async (req, res) => {
   try {
     const snippet = await Snippet.findByIdAndUpdate(
@@ -72,7 +75,6 @@ app.patch("/api/update/:id", async (req, res) => {
   }
 });
 
-// delete snippet
 app.delete("/api/delete/:id", async (req, res) => {
   try {
     const snippet = await Snippet.findByIdAndDelete(req.params.id);
@@ -83,12 +85,13 @@ app.delete("/api/delete/:id", async (req, res) => {
   }
 });
 
-// starting server
+// Start server
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect("mongodb+srv://Hanna:Nipsukka001@cluster0.peknkd0.mongodb.net/snippets?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   })
   .catch(err => console.log("DB connection error:", err));
+
 
