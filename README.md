@@ -3,8 +3,6 @@
 A simple REST API built with Node.js, Express, and MongoDB.  
 This project allows users to store, edit, retrieve, and delete code snippets.  
 
-This project was created for the Web Development course (Project 2).
-
 ---
 
 ## 🚀 Live API
