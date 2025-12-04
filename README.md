@@ -46,3 +46,12 @@ This project helped me understand how to build a complete backend API using Node
 I also gained confidence using tools like Postman to test API routes. Creating POST, GET, PATCH, and DELETE requests helped me understand how HTTP methods are used in real applications. After finishing the CRUD functionality, I practiced filtering, limits, and proper response formats. This made my API more flexible and realistic.
 
 Overall, this project improved my problem-solving skills, gave me practical backend experience, and showed me how full-stack development pieces connect together. I still need to practice with writing readme.md files because sometimes I struggle with the formatting.
+
+## 📝 Self-Assessment
+
+I believe I completed most of the required parts of this project successfully. The README does not include screenshots because, unfortunately, I didn’t have enough time to add them. I implemented the full CRUD functionality, tested each route using Postman, and deployed the API to Render as instructed.
+
+I did not have as much time to work on the project as I would have wanted, because I currently have a 3-week-old baby who requires a lot of attention. Despite this, I tried to focus on the essential parts of the project and make steady progress whenever possible.
+
+Overall, I am pretty satisfied with my progress and the final result. I still want to improve my skills in README formatting and structuring backend projects more cleanly, but I feel that I met the project requirements and learned a lot throughout the process.
+
