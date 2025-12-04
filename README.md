@@ -16,8 +16,6 @@ https://project2-4-tih3.onrender.com/
 - Full CRUD functionality (Create, Read, Update, Delete)
 - MongoDB database using Mongoose
 - Supports filtering (e.g. /api/getall?lang=js)
-- Supports limit parameter (e.g. /api/getall?limit=5)
-
 ---
 
 ## 🔧 How to Run the Project Locally
